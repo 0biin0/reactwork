@@ -45,11 +45,20 @@ const Body = () => {
         alert("버튼 눌렀어요");
         console.log(e);
     }
+    const btnProps = {
+        text : "1번버튼",
+        color : "pink",
+        a : "red",
+        b : 2,
+        c : 3
+
+    }
     return (
         <>
             <h3>본문입니다</h3>
             <button onClick={btnClick}>A이벤트 버튼</button><br/><br/>
             <button onClick={btnClick}>B이벤트 버튼</button><br/><br/>
+            <Button  {...btnProps}/><br/><br/>
             <Button />
            
         </>
