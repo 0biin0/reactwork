@@ -1,0 +1,12 @@
+.App {
+  text-align: center;
+}
+
+header, footer {
+  background-color: rgb(139, 193, 255);
+  
+}
+
+section {
+  height: 70vh;
+}
