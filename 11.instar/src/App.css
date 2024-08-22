@@ -1,0 +1,23 @@
+.App {
+  text-align: center;
+}
+
+.title{
+  height: 50px;
+  line-height: 50px;
+  background-color: lightpink;
+  color: rgb(253, 250, 253);
+  padding-left: 30px;
+}
+
+.list{
+  text-align: left;
+  padding-left: 10px;
+  border-bottom: 1px solid rgb(129, 83, 255);
+}
+
+span{
+  margin-left: 30px;
+  margin-right: 30px;
+  cursor: pointer;
+}
