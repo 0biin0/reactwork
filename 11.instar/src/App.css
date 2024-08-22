@@ -13,7 +13,7 @@
 .list{
   text-align: left;
   padding-left: 10px;
-  border-bottom: 1px solid rgb(129, 83, 255);
+  border-bottom: 1px solid rgb(187, 162, 255);
 }
 
 span{
@@ -21,3 +21,11 @@ span{
   margin-right: 30px;
   cursor: pointer;
 }
+
+.modal {
+  text-align: left;
+  padding-left: 10px;
+  background-color: rgb(209, 225, 255);
+  padding: 5px 0 5px 10px;
+}
+
