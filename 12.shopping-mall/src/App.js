@@ -15,6 +15,7 @@ import axios from 'axios';
 
 function App() {
   let [clothes, setClothes] = useState(pList);
+  let [page, setPage] = useState(2);
 
   let navigate = useNavigate();
   return (
@@ -51,16 +52,38 @@ function App() {
           }
         </Row>
     </Container>
+  
     <Button variant="outline-secondary" onClick={() => {
-      axios.get('https://raw.githubusercontent.com/professorjiwon/data/main/data2.json')
+      axios.get(`https://raw.githubusercontent.com/professorjiwon/data/main/data${page}.json`)
            .then(result =>{
               console.log(result.data);
+                setClothes([...clothes,...result.data]);
+                setPage(page+1);
+
+              // let value = [...result.data ,...clothes]
+              // setClothes(value);
+
+             // let value = [...clothes]; //1,2,3,1 ,2 ,3
+              // value.unshift(...result.data);
+              // setClothes(value);
+
            })
            .catch(() =>{
                console.log('실패');
+               alert('더이상 상품이 없습니다');
            })
 
     }}>서버에서 데이터 가져오기</Button>
+    {
+      /*
+        // 서버로 보낼 때
+        axios.post('url', 데이터)
+        ex) axios.post('url',{name:'kim})
+
+        * 동시에 요청을 여러개 할 때
+          promise.all(axios.get('url'),axios.get('url'), axios.post('url', 데이터))
+      */
+    }
           </>
         }/>  
        
@@ -81,6 +104,7 @@ function PListCol(props) {
       <Col lg={4}>
         <img src={`${process.env.PUBLIC_URL}/img/img${props.i}.jpg`} />
         <h4>{props.clothes.title}</h4>
+        <p>{props.clothes.content}</p>
         <p>{props.clothes.price}</p>
       </Col>
     </>
