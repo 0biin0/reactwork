@@ -4,6 +4,7 @@
 .main-bg{
   height: 750px;
   background-image: url("../public/img/main.jpg");
+  background-repeat: no-repeat;
 }
 img{
   height: 400px;
