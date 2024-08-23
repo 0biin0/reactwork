@@ -20,7 +20,27 @@ let pList = [
         title : "jeans",
         content : "Made in Seoul",
         price : 23000
-    }
+    },
+    
+        {
+          "id" : 3,
+          "title" : "Pants",
+          "content" : "Made in the States",
+          "price" : 40000
+        },
+        {
+          "id" : 4,
+          "title" : "ShortDress",
+          "content" : "Made in Italy",
+          "price" : 30000
+        },
+        {
+          "id" : 5,
+          "title" : "Dress",
+          "content" : "Made in the States",
+          "price" : 45000
+        }
+      
 ]
 
 export default pList;
