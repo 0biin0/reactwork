@@ -10,3 +10,15 @@ img{
   height: 400px;
   width: 80%;
 }
+
+.start {
+   opacity: 0; 
+  /* transform: 1; */
+}
+
+.end{
+  opacity: 1;
+  transition: opacity 1s;
+  /* transform: scale(0);
+  transition: all; */
+}
