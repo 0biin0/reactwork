@@ -23,7 +23,7 @@ function App() {
         }}>글수정</button>
 
 {
-        title.map(function(t, i) {
+        title.map(function(t, i) { {/* t : 배열의 현재 요소 / i  : 현재 요소의 인덱스 */}
           return (
             <div className="list" key={i}>
               <h4 onClick={() => {setModal(!modal); setModalIndex(i)}}>{t}</h4>
