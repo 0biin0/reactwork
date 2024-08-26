@@ -7,9 +7,12 @@ import { Link, Route, Routes, useNavigate, Outlet } from 'react-router-dom';
 import Detail from './pages/Detail';
 import axios from 'axios';
 
-/* 
-    탭 만들기
+/*
+  * ajax로 서버로부터 데이터 얻어오기
+    1. 설치하기 : npm a axios
 */
+
+
 function App() {
   let [clothes, setClothes] = useState(pList);
   let [page, setPage] = useState(2);
@@ -57,6 +60,13 @@ function App() {
                 setClothes([...clothes,...result.data]);
                 setPage(page+1);
 
+              // let value = [...result.data ,...clothes]
+              // setClothes(value);
+
+             // let value = [...clothes]; //1,2,3,1 ,2 ,3
+              // value.unshift(...result.data);
+              // setClothes(value);
+
            })
            .catch(() =>{
                console.log('실패');
@@ -64,6 +74,16 @@ function App() {
            })
 
     }}>서버에서 데이터 가져오기</Button>
+    {
+      /*
+        // 서버로 보낼 때
+        axios.post('url', 데이터)
+        ex) axios.post('url',{name:'kim})
+
+        * 동시에 요청을 여러개 할 때
+          promise.all(axios.get('url'),axios.get('url'), axios.post('url', 데이터))
+      */
+    }
           </>
         }/>  
        
