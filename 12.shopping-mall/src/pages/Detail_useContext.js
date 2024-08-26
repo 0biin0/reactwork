@@ -1,12 +1,24 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Nav, Container,Row, Button, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import './../App.css'
+import {Context1} from './../App.js';
 
 
 function Detail (props) {
 
+  /*
+    let a = useContext(Context1);
+    console.log(a);
+    console.log(a.stock);
+  */
+
+    let {stock, clothes} = useContext(Context1);
+    console.log(stock);
+    console.log(clothes);
+
       let {index} = useParams();
+
       let findId = props.clothes.find(function(x) {
         return x.id == index;
       })
@@ -84,6 +96,8 @@ function Detail (props) {
     function TabContent({tab}) {
         let[fade, setFade] = useState('')
 
+        let{stock} = useContext(Context1);
+
         useEffect(() => {
             setTimeout(() => {setFade('end')},100)  //0.1초 뒤 end
             return () => {
@@ -95,7 +109,7 @@ function Detail (props) {
         return(
          
         <div className={fade}>
-             { [<div> 내용 0 </div>, <div> 내용 1 </div>, <div> 내용 2 </div> ][tab] }
+             { [<div> {stock} </div>, <div> {stock[tab]} </div>, <div> {stock[tab]} </div> ][tab] }
         </div>
     )
    
