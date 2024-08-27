@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 // userSlice로 분활 한 후 import
 import { changeName, increase } from '../store/userSlice';
+import { addCount } from '../store/store';
 
 function Cart() {
     /*
@@ -21,7 +22,7 @@ function Cart() {
 
     return (
         <div className='cart'><br/>
-        <h2>{state.member.name} {state.member.age}님의 CART LIST</h2><br/>
+        <h2>{state.member.name}님의 CART LIST</h2><br/>
         <Table striped bordered hover>
             <thead>
                 <tr>
@@ -33,14 +34,15 @@ function Cart() {
             </thead>
             <tbody>
                 {
-                    state.cart.map(c => 
+                    state.cart.map((c,i) => 
                         <tr>
                             <td>{c.id}</td>
                             <td>{c.title}</td>
                             <td>{c.count}</td>
                             <td>
                                 <Button variant="outline-secondary" onClick={() => {
-                                    dispatch((increase(1)))
+                                    //  dispatch((addCount(i))) 배열의 index 번호는 언제든지 변할 수 있다
+                                    dispatch((addCount(c.id)))
                                 }}>
                                     +
                                 </Button>

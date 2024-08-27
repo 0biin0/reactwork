@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import { Nav, Container,Row, Button, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import './../App.css'
+import { addItem} from '../store/store'
+import { useDispatch } from "react-redux";
 
 
 function Detail (props) {
 
+      let dispatch = useDispatch();
       let {index} = useParams();
       let findId = props.clothes.find(function(x) {
         return x.id == index;
@@ -40,11 +43,14 @@ function Detail (props) {
         setFade2('end')
     }, [])
 
-
+    
     return (
         <div>
+
             <input onChange={(e) => {setNum(e.target.value)}} />
             {alert ? <h2>2초 이내 구매시 할인</h2> : null}
+
+            <br />
             
             <Container className={fade2}>
             <Row>
@@ -54,8 +60,10 @@ function Detail (props) {
                 <Col lg={6}>
                     <h4>{findId.title}</h4>
                     <p>{findId.content}</p>
-                    <p>{findId.price}</p>
-                    <Button variant="outline-secondary">주문하기</Button>
+                    <p>{findId.price}원</p>
+                    <Button variant="outline-secondary" onClick={() =>
+                        dispatch(addItem({id:findId.id, title:findId.title, count:1}))
+                    }>주문하기</Button>
                 </Col>
             </Row>
             </Container>
