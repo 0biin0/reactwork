@@ -58,7 +58,7 @@ function Detail (props) {
                     <p>{findId.content}</p>
                     <p>{findId.price}</p>
                     <Button variant="info" onClick={() => {
-                        axios.post('/react/addcart', {id:findId.id, title:findId.title, count:1})
+                        axios.post('/react/addCart', {id:findId.id, title:findId.title, count:1})
                              .then(result => {
                                 console.log(result);
                                 navigate('/cart');

@@ -27,15 +27,15 @@ function Cart() {
                 </tr>
             </thead>
             <tbody>
-                {/* {
-                    state.cart.map((c,i) => 
+                {
+                    list.map((c,i) => 
                         <tr>
                             <td>{c.id}</td>
                             <td>{c.title}</td>
                             <td>{c.count}</td>
                         </tr>
                     )
-                } */}
+                } 
             </tbody>
           </Table>
         </div>
@@ -43,3 +43,4 @@ function Cart() {
 }
 
 export default Cart;
+//윈터 윈터 윈터 윈터 윈터 윈터 윈터
